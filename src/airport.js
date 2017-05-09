@@ -2,6 +2,7 @@
 
 function Airport() {
   this._hangar = [];
+  this._CAPACITY = 10;
 }
 
 Airport.prototype.planes = function(){
@@ -30,5 +31,8 @@ Airport.prototype.isStormy = function(){
 };
 
 Airport.prototype.isFull = function(){
+  if(this._hangar.length > this._CAPACITY){
+    return true;
+  }
   return false;
 };

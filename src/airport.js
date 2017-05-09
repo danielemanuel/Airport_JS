@@ -9,6 +9,9 @@ Airport.prototype.planes = function(){
 };
 
 Airport.prototype.clearForLanding = function(plane){
+  if(this.isFull()){
+    throw new Error('cannot land if the airport is full');
+  }
   if(this.isStormy()){
     throw new Error('cannot land during storm');
   }
@@ -23,5 +26,9 @@ Airport.prototype.clearForTakeOff = function(){
 };
 
 Airport.prototype.isStormy = function(){
+  return false;
+};
+
+Airport.prototype.isFull = function(){
   return false;
 };

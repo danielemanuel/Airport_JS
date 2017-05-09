@@ -35,4 +35,9 @@ describe('Feature Tests:', function(){
     expect(airport.planes).not.toContain(plane);
   });
 
+  it('prevents landing the plane if airport is full', function() {
+    spyOn(airport, 'isFull').and.returnValue(true);
+    expect(function(){plane.land(airport);}).toThrowError('cannot land if the airport is full');
+  })
+
 });

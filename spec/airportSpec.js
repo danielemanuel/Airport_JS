@@ -38,4 +38,8 @@ describe('Airport', function() {
     expect(function(){airport.clearForLanding();}).toThrowError('cannot land during storm');
   });
 
+  it('does not let plane to land if the airport is full', function(){
+    spyOn(airport, 'isFull').and.returnValue(true);
+    expect(function(){airport.clearForLanding();}).toThrowError('cannot land if the airport is full');
+  });
 })

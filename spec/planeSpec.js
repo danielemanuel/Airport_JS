@@ -19,8 +19,6 @@ describe('Plane', function() {
     plane.land(airport);
     plane.takeoff();
     expect(airport.clearForTakeOff).toHaveBeenCalledWith();
+  });
 
-
-  })
-
-})
+});
